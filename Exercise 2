@@ -1,0 +1,37 @@
+// Refernce: https://www.w3schools.com/java/ref_output_printf.asp
+// Created by : Isabella Benavides Barona
+// Group:10B
+// Topic: Convert Minutes into Years and Days
+// Date:
+// Check the Input-Process-Output steps
+
+import java.util.Scanner;
+
+// Step 1: Setting Class name and Scanner
+
+public class VacationCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Step 2: Collect input
+        System.out.print("Enter minutes: ");
+        long minutes = input.nextLong();   // user enters the minutes
+        
+        // Step 3: Process data
+        // 1 year = 365 days = 365 * 24 * 60 minutes
+        long minutesInYear = 365L * 24 * 60;
+        long years = minutes / minutesInYear;
+        long remainingMinutes = minutes % minutesInYear;
+        
+        // Convert remaining minutes into days
+        long minutesInDay = 24 * 60;
+        long days = remainingMinutes / minutesInDay;
+        
+        // Step 4: Display results
+        System.out.println("\n=== CONVERSION RESULT ===");
+        System.out.printf("%,d minutes is approximately %d years and %d days.%n", minutes, years, days);
+        
+        // Closing scanner
+        input.close();
+    }
+}
